@@ -1,0 +1,20 @@
+{
+  "name": "yanxi-speaking",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "言习 · 手机端中英文口语练习 PWA",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nayoagan-ship-it/yanxi-speaking.git"
+  }
+}

@@ -1,0 +1,17 @@
+node_modules/
+.openai/
+.openai-local/
+.env
+.env.*
+!.env.example
+*.log
+*.tar.gz
+*.zip
+qa/
+artifacts/
+recordings/
+*.webm
+*.wav
+*.mp3
+.DS_Store
+Thumbs.db
