@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {ARTICLE,DEFAULT_PARAGRAPHS,makeExercise,selectParagraphs,splitSentences,parseImportedArticle,wordCoaches} from '../dist/english-content.js';
-import {englishTokens,alignWords,estimatePitch,analyzePitch,evaluateEnglish} from '../dist/english-evaluation.js';
+import {ARTICLE,DEFAULT_PARAGRAPHS,makeExercise,selectParagraphs,splitSentences,parseImportedArticle,wordCoaches} from '../public/english-content.js';
+import {englishTokens,alignWords,estimatePitch,analyzePitch,evaluateEnglish} from '../public/english-evaluation.js';
 
 test('open-source article has twelve original English paragraphs with clear provenance',()=>{
   assert.equal(ARTICLE.paragraphs.length,12);assert.deepEqual(ARTICLE.paragraphs.map(p=>p.id),Array.from({length:12},(_,i)=>i+1));

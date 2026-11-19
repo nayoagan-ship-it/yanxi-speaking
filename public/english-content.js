@@ -1,3 +1,4 @@
+import {EXTRA_ARTICLES} from './english-lessons.js';
 // Original practice article prepared for the MIT open-source edition.
 export const ARTICLE={
   "id": "original-speaking-club",
@@ -56,6 +57,7 @@ export const ARTICLE={
     }
   ]
 };
+export const BUILTIN_ARTICLES=[ARTICLE,...EXTRA_ARTICLES];
 export const DEFAULT_PARAGRAPHS=[10,11];
 export const WORD_COACH=[
   {word:'structured',us:'ˈstrʌk.tʃɚd',uk:'ˈstrʌk.tʃəd',stress:'STRUC-tured',tip:'重音在开头。把 /str/ 连起来，末尾的 /d/ 不要额外加一个元音。'},

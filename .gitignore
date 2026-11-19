@@ -1,5 +1,4 @@
 node_modules/
-.openai/
 .openai-local/
 .env
 .env.*
@@ -15,3 +14,9 @@ recordings/
 *.mp3
 .DS_Store
 Thumbs.db
+
+/dist/
+.local/
+*.sqlite*
+.openai/*
+!.openai/hosting.json

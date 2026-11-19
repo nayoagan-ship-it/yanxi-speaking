@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {normalize,alignText,analyzeStructure,analyzeFluency,analyzePauses,evaluate} from '../dist/evaluation.js';
-import {THEMES,FRAMEWORKS,READING_CATEGORIES,FORMAL_READINGS,generateMaterial,initialMaterial,getModel} from '../dist/content.js';
+import {normalize,alignText,analyzeStructure,analyzeFluency,analyzePauses,evaluate} from '../public/evaluation.js';
+import {THEMES,FRAMEWORKS,READING_CATEGORIES,FORMAL_READINGS,generateMaterial,initialMaterial,getModel} from '../public/content.js';
 test('punctuation and case do not become reading mistakes',()=>{assert.equal(normalize('你好，世界！ＡＢＣ。'),'你好世界abc');assert.equal(alignText('你好，世界！','你好世界').similarity,100);});
 test('reading distinguishes omitted, inserted and changed characters',()=>{assert.equal(alignText('今天天气很好，我想去公园。','今天天气很好我去公园').omitted,1);assert.equal(alignText('我去公园','我想去公园').inserted,1);assert.equal(alignText('我去公园','我去花园').substituted,1);assert.equal(alignText('我我喜欢读书','我喜欢读书').omitted,1);});
 test('no speech or a very short recording creates no text assessment',()=>{const base={mode:'reading',text:'今天我要练习说话。',framework:'prep'};for(const input of [{transcript:'',duration:40},{transcript:'今天',duration:1}]){const result=evaluate({material:base,...input});assert.equal(result.alignment,null);assert.equal(result.speed,null);assert.equal(result.usable,false);assert.equal(result.advice[0].title,'本次未形成可比对的转写');}});
